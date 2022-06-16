@@ -1,3 +1,10 @@
 language: node_js
-rvm:
- - 14.0
+node_js: 
+  - "12.4.3"
+github_token: $GITHUB_TOKEN
+install: 
+  - "npm ci"
+script: 
+  - "npm run build"
+deploy: 
+  - kip_cleanup: true
