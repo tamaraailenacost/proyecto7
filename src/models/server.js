@@ -1,8 +1,8 @@
 const express = require('express');
 
 //router
-const routerProducts = require('../src/routers/products');
-const routerCart = require('../src/routers/cart');
+const routerProducts = require('../routers/products');
+const routerCart = require('../routers/cart');
 
 //DB
 const { MongoConnection } = require('../DB/config')
@@ -15,7 +15,7 @@ class Server {
 
     constructor() {
 
-        this.port = 8080
+        this.port = process.env.PORT
         this.app = express()
 
         // function
@@ -33,7 +33,7 @@ class Server {
 
 
         const server = this.app.listen(this.port, () =>
-            console.log(`Servidor escuchando en el puerto`))
+            console.log(`Servidor escuchando en el puerto ${this.port}`))
         server.on("error", (error) =>
             console.log(`Error en servidor ${error}`))
 

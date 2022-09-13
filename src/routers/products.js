@@ -2,8 +2,8 @@
 const { Router, response, urlencoded } = require('express')
 const routerProducts = Router()
 
-const { ProductsModels } = require('../../models/productsModel');
-const Producto = require('../../daos/product')
+const { ProductsModels } = require('../models/productsModel');
+const Producto = require('../daos/product')
 const { isAdmin } = require('../Admin')
 
 

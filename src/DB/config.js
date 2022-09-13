@@ -6,8 +6,7 @@ const mongoose = require('mongoose');
 const MongoConnection = async() => {
 
     try {
-
-        await mongoose.connect('mongodb://localhost:27017/test');
+        await mongoose.connect(process.env.MONGODB);
         console.log('coneccion exitosa a Base MongoDb');
 
 
